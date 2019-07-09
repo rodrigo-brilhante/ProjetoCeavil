@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ned.ceavil.modelos;
 
 import java.util.ArrayList;
@@ -10,14 +5,12 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- *
  * @author mauricio.junior
  */
 public class Ebook {
-    
     private String id;
     private String titulo;
-    private String capa;
+    private String capa, caminhoCapa;
     private List<Eixo> eixos;
 
     public Ebook() {
@@ -60,5 +53,11 @@ public class Ebook {
     public void setEixo(Eixo eixo) {
         this.eixos.add(eixo);
     }
-    
+        public String getCaminhoCapa() {
+        return caminhoCapa;
+    }
+
+    public void setCaminhoCapa(String caminhoCapa) {
+        this.caminhoCapa = caminhoCapa;
+    }
 }

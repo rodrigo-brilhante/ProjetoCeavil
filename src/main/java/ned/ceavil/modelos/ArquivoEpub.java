@@ -9,8 +9,9 @@ public enum ArquivoEpub {
     
     MIMETYPE("mimetype"),
     CONTAINER("container.xml"),
-    CONTENT("conent.opf"),
-    TOC("toc.ncx");   
+    CONTENT("content.opf"),
+    TOC("toc.ncx"),
+    CSS("style.css");
     
     private String descricao;
 

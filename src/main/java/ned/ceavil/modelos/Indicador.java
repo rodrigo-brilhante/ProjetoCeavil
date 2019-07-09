@@ -1,30 +1,61 @@
-
 package ned.ceavil.modelos;
-
-import java.util.UUID;
-
 /**
- *
  * @author mauricio.junior
  */
 public class Indicador {
 
-    private String id;
+    private Integer id, idEixo;
     private String titulo;
     private String descricao;
-    private String nomeInfografico;
-    private String[] localizacao;
+    private String nomeImagem;
+    private final String[] localizacao;
+    private String caminhoImagem;
+    private boolean existe = false;
+    private String nomeTimeLine;
+    private String caminhoTimeLine;
+
+    
+    public String getNomeTimeLine() {
+        return nomeTimeLine;
+    }
+
+    public void setNomeTimeLine(String nomeTimeLine) {
+        this.nomeTimeLine = nomeTimeLine;
+    }
+
+    public String getCaminhoTimeLine() {
+        return caminhoTimeLine;
+    }
+
+    public void setCaminhoTimeLine(String caminhoTimeLine) {
+        this.caminhoTimeLine = caminhoTimeLine;
+    }
+
+    public boolean isExiste() {
+        return existe;
+    }
+
+    public void setExiste(boolean existe) {
+        this.existe = existe;
+    }
 
     public Indicador() {
-        this.id = UUID.randomUUID().toString();
         localizacao = new String[3];
     }
 
-    public String getId() {
+    public Integer getIdEixo() {
+        return idEixo;
+    }
+
+    public void setIdEixo(Integer idEixo) {
+        this.idEixo = idEixo;
+    }
+    
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -44,12 +75,12 @@ public class Indicador {
         this.descricao = descricao;
     }
 
-    public String getNomeInfografico() {
-        return nomeInfografico;
+    public String getNomeImagem() {
+        return nomeImagem;
     }
 
-    public void setNomeInfografico(String nomeInfografico) {
-        this.nomeInfografico = nomeInfografico;
+    public void setNomeImagem(String nomeInfografico) {
+        this.nomeImagem = nomeInfografico;
     }
 
     public String[] getLocalizacao() {
@@ -60,4 +91,26 @@ public class Indicador {
         this.localizacao[indice] = info;
     }
     
+    public String getCaminhoImagem() {
+        return caminhoImagem;
+    }
+
+    public void setCaminhoImagem(String caminhoImagem) {
+        this.caminhoImagem = caminhoImagem;
+    }
+
+    public Indicador cloneIndicador(){
+        Indicador aux = new Indicador();
+        aux.id = this.id;
+        aux.titulo = this.titulo;
+        aux.descricao = this.descricao;
+        aux.caminhoImagem = this.caminhoImagem;
+        aux.nomeImagem = this.nomeImagem;
+        aux.idEixo = this.idEixo;
+        aux.existe = this.existe;
+        aux.nomeTimeLine = this.nomeTimeLine;
+        aux.caminhoTimeLine = this.caminhoTimeLine;
+        System.arraycopy(this.localizacao, 0, aux.localizacao, 0, 3);
+        return aux;
+    }
 }
